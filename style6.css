@@ -1,0 +1,176 @@
+/* style5.css — Покращений дизайн */
+
+/* 1. Скидання (normalize) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Типографіка та фон */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background: #fdfdfd;
+  padding: 20px;
+}
+
+/* 3. Заголовки */
+.site-title {
+  font-family: 'Georgia', serif;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: #b22222;
+}
+.section-header .section-title {
+  font-size: 1.75em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.25em;
+}
+
+/* Псевдоелементи навколо заголовка */
+.site-title:before { content: "🍽️ "; }
+.site-title:after  { content: " 🍲"; }
+
+/* 4. Навігація */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+.navbar a {
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.navbar a:link,
+.navbar a:visited {
+  color: #444;
+}
+.navbar a:hover {
+  background: #ffe4b5;
+}
+.navbar a:active {
+  background: #dc7633;
+  color: #fff;
+}
+
+/* :first-child на першому елементі меню */
+.navbar li:first-child a {
+  text-transform: uppercase;
+}
+
+/* 5. Контент і плаваючі блоки */
+.content {
+  max-width: 800px;
+  margin: auto;
+}
+#main-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2em;
+}
+.callout {
+  position: absolute;
+  top: -10px; right: -10px;
+  background: #dc7633;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.85em;
+  border-radius: 50px;
+}
+
+/* clearfix для контейнерів з float */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 6. Inline-елементи */
+.highlight {
+  background: #fff3cd;
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+/* 7. Списки */
+.recipe-list,
+.ingredients,
+.tips-list {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+.recipe-list li {
+  margin-bottom: 0.5em;
+}
+.recipe-list + .recipe-detail {
+  margin-top: 1.5em;
+  padding: 1em;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+/* :first-child у підписі рецепту */
+.recipe-detail .recipe-title:first-child {
+  color: #b22222;
+}
+
+/* 8. Картинки */
+.recipe-image {
+  float: right;
+  margin: 0 0 1em 1em;
+  width: 150px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 9. Таблиця */
+#stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+}
+#stats-table th,
+#stats-table td {
+  padding: 0.75em;
+  border: 1px solid #ddd;
+}
+#stats-table th {
+  background: #eee;
+  font-weight: bold;
+}
+
+/* сусідній селектор, щоб підкреслити строки після header */
+#stats-table tr + tr {
+  background: #fafafa;
+}
+
+/* 10. Відео */
+.video-container {
+  max-width: 560px;
+  margin: 1.5em auto;
+  text-align: center;
+}
+.recipe-video {
+  width: 100%;
+  height: 315px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* 11. Footer clear-float */
+.site-footer {
+  text-align: center;
+  margin-top: 2em;
+  color: #666;
+}
